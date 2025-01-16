@@ -1,19 +1,30 @@
-let darkModeText = "Switch to Default Mode";
-let defaultModeText = "Switch to Dark Mode";
-let textContent = "Switch to Dark Mode";
+let darkTheme = "Switch to Default Mode";
+let defaultTheme = "Switch to Dark Mode";
+
+let accessibleFont = "Switch to Default Font";
+let defaultFont = "Switch to a More Readable Font";
 
 document.addEventListener('DOMContentLoaded', (event) => {
-const button = document.getElementById('darkButton');
-	button.addEventListener("click", function(){
-	//let textContent = "Switch to Dark Mode";
-		if (button.textContent === defaultModeText){
-			button.textContent = darkModeText;
+const themeButton = document.getElementById('themeButton');
+const fontButton = document.getElementById('fontButton');
+	themeButton.addEventListener("click", function(){
+		if (themeButton.themeTextContent === defaultTheme){
+			themeButton.themeTextContent = "Switch to Default Mode";
 			document.body.classList.toggle("darkMode");
 		}
 		else {
-			button.textContent = defaultModeText;
+			themeButton.themeTextContent = "Switch to Dark Mode";
 			document.body.classList.toggle("darkMode");
 		}
 	})
+	fontButton.addEventListener("click", function(){
+		if(fontButton.fontTextContent === defaultFont){
+			fontButton.fontTextContent = "Switch to Default Font";
+			document.body.classList.toggle("accessibleMode");
+		}
+		else{
+			fontButton.fontTextContent = "Switch to a More Readable Font";
+			document.body.classList.toggle("accessibleMode");
+		}
+	})
 	});
-
