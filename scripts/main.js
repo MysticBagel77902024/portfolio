@@ -5,15 +5,15 @@ let accessibleFont = "Switch to Default Font";
 let defaultFont = "Switch to a More Readable Font";
 
 document.addEventListener('DOMContentLoaded', (event) => {
-const themeButton = document.getElementById('themeButton');
+const ThemeButton = document.getElementById('themeButton');
 const fontButton = document.getElementById('fontButton');
 	themeButton.addEventListener("click", function(){
-		if (themeButton.themeTextContent === defaultTheme){
-			themeButton.themeTextContent = "Switch to Default Mode";
+		if (ThemeButton.themeTextContent === defaultTheme){
+			ThemeButton.themeTextContent = "Switch to Default Mode";
 			document.body.classList.toggle("darkMode");
 		}
 		else {
-			themeButton.themeTextContent = "Switch to Dark Mode";
+			ThemeButton.themeTextContent = "Switch to Dark Mode";
 			document.body.classList.toggle("darkMode");
 		}
 	})
