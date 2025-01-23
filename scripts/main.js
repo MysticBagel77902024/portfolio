@@ -1,30 +1,22 @@
-let darkTheme = "Switch to Default Mode";
-let defaultTheme = "Switch to Dark Mode";
-
-let accessibleFont = "Switch to Default Font";
-let defaultFont = "Switch to a More Readable Font";
-
-document.addEventListener('DOMContentLoaded', (event) => {
-const ThemeButton = document.getElementById('themeButton');
-const fontButton = document.getElementById('fontButton');
-	themeButton.addEventListener("click", function(){
-		if (ThemeButton.themeTextContent === defaultTheme){
-			ThemeButton.themeTextContent = "Switch to Default Mode";
-			document.body.classList.toggle("darkMode");
-		}
-		else {
-			ThemeButton.themeTextContent = "Switch to Dark Mode";
-			document.body.classList.toggle("darkMode");
-		}
-	})
-	fontButton.addEventListener("click", function(){
-		if(fontButton.fontTextContent === defaultFont){
-			fontButton.fontTextContent = "Switch to Default Font";
-			document.body.classList.toggle("accessibleMode");
-		}
-		else{
-			fontButton.fontTextContent = "Switch to a More Readable Font";
-			document.body.classList.toggle("accessibleMode");
-		}
-	})
-	});
+function themeSwitch() {
+	let themeButton = document.getElementById("themeButton");
+	let body = document.getElementById("body");
+	if(themeButton.innerHTML === "Switch to Dark Mode"){
+		themeButton.innerHTML = "Switch To Default Mode";
+	}
+	else{
+		themeButton.innerHTML = "Switch to Dark Mode";
+	}
+	body.classList.toggle("darkMode");
+}
+function fontSwitch() {
+	let fontButton = document.getElementById("fontButton");
+	let body = document.getElementById("body");
+	if(fontButton.innerHTML === "Switch to a More Readable Font"){
+		fontButton.innerHTML = "Switch to Default Font";
+	}
+	else {
+		fontButton.innerHTML = "Switch to a More Readable Font";
+	}
+	body.classList.toggle("accessibleMode");
+}
